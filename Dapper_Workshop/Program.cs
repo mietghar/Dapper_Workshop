@@ -2,6 +2,7 @@
 using Examples.Utility;
 using Exercices.Utility;
 using System;
+using System.Linq;
 using System.Threading;
 
 namespace Dapper_Workshop
@@ -10,7 +11,13 @@ namespace Dapper_Workshop
     {
         static void Main(string[] args)
         {
-            E_ActivityType Activity;
+            if(TestIfDapperWorkShopOn())
+            {
+                Console.Clear();
+                Console.WriteLine("Aplikacja jest już uruchomiona");
+                CloseThisApp();
+            }
+            EActivityType Activity;
             do
             {
                 Console.Clear();
@@ -22,33 +29,42 @@ namespace Dapper_Workshop
                 {
                     case 'e':
                         Console.WriteLine("You choosed to run an example");
-                        Activity = E_ActivityType.Example;
+                        Activity = EActivityType.Example;
                         break;
                     case 'w':
                         Console.WriteLine("You choosed to run an exercice");
-                        Activity = E_ActivityType.Exercice;
+                        Activity = EActivityType.Exercice;
                         break;
                     case 'q':
                         Console.WriteLine("You choosed to quit");
-                        Activity = E_ActivityType.Quit;
+                        Activity = EActivityType.Quit;
                         break;
                     default: continue;
                 }
                 switch (Activity)
                 {
-                    case E_ActivityType.Example:
-                        new ExampleChooser().Choose();
+                    case EActivityType.Example:
+                        new ExampleProcessor().ChooseAndShow();
                         break;
-                    case E_ActivityType.Exercice:
-                        new ExerciceChooser().Choose();
+                    case EActivityType.Exercice:
+                        new ExerciceFactory().Choose();
                         break;
                     default: break;
                 }
-                if (Activity == E_ActivityType.Quit)
+                if (Activity == EActivityType.Quit)
                     break;
             }
             while (1 == 1);
+            CloseThisApp();
+        }
+
+        private static bool TestIfDapperWorkShopOn() =>
+            System.Diagnostics.Process.GetProcessesByName("Dapper_Workshop").Count() >= 1;
+
+        private static void CloseThisApp()
+        {
             Thread.Sleep(2000);
+            Environment.Exit(0);
         }
     }
 }

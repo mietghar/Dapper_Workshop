@@ -1,6 +1,6 @@
 ﻿namespace Common.Enum
 {
-    public enum E_ActivityType
+    public enum EActivityType
     {
         Example = 1,
         Exercice,

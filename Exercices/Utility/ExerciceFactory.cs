@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exercices.Utility
 {
-    public class ExerciceChooser
+    public class ExerciceFactory
     {
-        public ExerciceChooser()
+        public ExerciceFactory()
         {
 
         }
