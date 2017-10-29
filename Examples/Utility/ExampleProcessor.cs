@@ -20,12 +20,16 @@ namespace Examples.Utility
                 var _choice = Console.ReadKey().KeyChar;
                 _choice = char.ToLower(_choice);
                 Console.WriteLine();
+                choosed = true;
                 switch (_choice)
                 {
                     case 'b':
                         break;
                     case '1':
                         Example = EExample.Example_1;
+                        break;
+                    case '2':
+                        Example = EExample.Example_2;
                         break;
                     default:
                         choosed = false;

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DapperWorkshopInitializer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{67626B98-1413-4161-905F-701DB4C6D9FE}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{EFC2B227-1FD9-4167-9314-C313FA930851}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Examples\Examples.csproj">
       <Project>{55bb82ad-9026-40b8-9ce9-6424d8dea6ce}</Project>

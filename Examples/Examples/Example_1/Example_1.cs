@@ -19,11 +19,16 @@ namespace Examples.Examples.Example_1
 
             try
             {
+                Console.WriteLine("Single object:");
                 var _person = Repository.GetPerson();
                 var _people = Repository.GetPeople();
+                ConsoleExtension.WriteObject(_person);
+                Console.WriteLine("\n\nPress any buttons to show all objects:/n");
+                Console.ReadKey();
+                Console.WriteLine();
                 ConsoleExtension.WriteObject(_people);
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 Console.WriteLine(ConnectionStore.ConnectionErrorProvider(exception.Message));
             }
