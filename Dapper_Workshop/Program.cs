@@ -60,7 +60,7 @@ namespace Dapper_Workshop
         }
 
         private static bool TestIfDapperWorkShopOn() =>
-            System.Diagnostics.Process.GetProcessesByName("Dapper_Workshop").Count() >= 1;
+            System.Diagnostics.Process.GetProcessesByName("Dapper_Workshop").Count() > 1;
 
         private static void CloseThisApp()
         {
