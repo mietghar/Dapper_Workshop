@@ -16,6 +16,7 @@ namespace Dapper_Workshop
                 Console.Clear();
                 Console.WriteLine("Aplikacja jest już uruchomiona");
                 CloseThisApp();
+
             }
             new DapperWorkshopInitializer().InitializeDapperWorkshops();
             EActivityType Activity;
