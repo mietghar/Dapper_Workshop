@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using System.Data.SqlClient;
+using System;
 
 namespace DAL.Repository
 {
@@ -12,18 +13,11 @@ namespace DAL.Repository
             ConnectionString = connectionString;
         }
 
-        public void InsertIntoPersonTable()
+        public void Initialize()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                connection.Execute("IF NOT EXISTS (SELECT Id FROM Employee WHERE FirstName = @FirstName AND LastName = @LastName)" +
-                    "BEGIN INSERT INTO Employee (FirstName, LastName, AddressId) " +
-                    "Values (@FirstName, @LastName, @AddressId, @Job) END",
-                    new[]
-                    {
-                        new {FirstName = "Michał", LastName = "Gwóźdź", AddressId = 1},
-                        new {FirstName = "Łukasz", LastName = "Szustak", AddressId = 2}
-                    });
+                connection.Execute(Scripts.InitializeScripts);
             }
         }
     }

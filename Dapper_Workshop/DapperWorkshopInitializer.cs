@@ -1,5 +1,6 @@
 ﻿using Common.Utility;
 using DAL.Repository;
+using System.Data.SqlClient;
 
 namespace Dapper_Workshop
 {
@@ -14,7 +15,8 @@ namespace Dapper_Workshop
 
         public void InitializeDapperWorkshops()
         {
-            Repository.InsertIntoPersonTable();
+            Repository.Initialize();
+
         }
     }
 }
