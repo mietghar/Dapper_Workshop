@@ -4,10 +4,10 @@ using System.Linq;
 
 namespace DAL.Repository
 {
-    public class RepositoryExample_2
+    public class Example2Repository
     {
         private readonly string ConnectionString;
-        public RepositoryExample_2(string connectionString)
+        public Example2Repository(string connectionString)
         {
             ConnectionString = connectionString;
         }
@@ -16,13 +16,13 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                return connection.Execute("PersonInsert",
+                return connection.Execute("EmployeeInsert",
                     new[]
                     {
-                        new {FirstName = "Jerzy", LastName = "Killer", Age = 38, Job = 0},
-                        new {FirstName = "Beata", LastName = "Bęben", Age = 33, Job = 2},
-                        new {FirstName = "Cyprian", LastName = "Cebula", Age = 23, Job = 0},
-                        new {FirstName = "Karol", LastName = "Kowalski", Age = 17, Job = 1}
+                        new {FirstName = "Jerzy", LastName = "Killer", AddressId = 38},
+                        new {FirstName = "Beata", LastName = "Bęben", AddressId = 33},
+                        new {FirstName = "Cyprian", LastName = "Cebula", AddressId = 7},
+                        new {FirstName = "Karol", LastName = "Kowalski", AddressId = 8}
                     }, commandType: System.Data.CommandType.StoredProcedure);
             }
         }

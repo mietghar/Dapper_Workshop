@@ -7,28 +7,28 @@ using System;
 
 namespace DAL.Repository
 {
-    public class RepositoryExample_1
+    public class Example1Repository
     {
         private readonly string ConnectionString;
 
-        public RepositoryExample_1(string connectionString)
+        public Example1Repository(string connectionString)
         {
             ConnectionString = connectionString;
         }
 
-        public Example_1ViewModel GetPerson()
+        public EmployeeDTO GetPerson()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                return connection.Query<Example_1ViewModel>("SELECT * FROM Person").FirstOrDefault();
+                return connection.QueryFirstOrDefault<EmployeeDTO>("SELECT * FROM Employee");
             }
         }
 
-        public IEnumerable<Example_1ViewModel> GetPeople()
+        public IEnumerable<EmployeeDTO> GetPeople()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                return connection.Query<Example_1ViewModel>("SELECT * FROM Person").ToList();
+                return connection.Query<EmployeeDTO>("SELECT * FROM Employee").ToList();
             }
         }
     }

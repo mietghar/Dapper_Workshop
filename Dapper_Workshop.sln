@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper_Workshop", "Dapper_Workshop\Dapper_Workshop.csproj", "{114D8035-BDA1-4099-BC47-6D9556300CCD}"
 EndProject
@@ -18,6 +18,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{85A84114-DB08-4826-B9E5-25E9DB565E04}"
 	ProjectSection(SolutionItems) = preProject
 		Files\Szkolenie warsztatowe Dapper.pptx = Files\Szkolenie warsztatowe Dapper.pptx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{B12CCA22-0B8D-419A-82A2-8F974436EA48}"
+	ProjectSection(SolutionItems) = preProject
+		Files\Procedures.sql = Files\Procedures.sql
 	EndProjectSection
 EndProject
 Global
@@ -53,6 +58,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B12CCA22-0B8D-419A-82A2-8F974436EA48} = {85A84114-DB08-4826-B9E5-25E9DB565E04}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FD2E82C1-1AF6-4F4C-9C5A-BE0F9303C2D5}

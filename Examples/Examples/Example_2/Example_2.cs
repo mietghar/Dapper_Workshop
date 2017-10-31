@@ -7,10 +7,10 @@ namespace Examples.Examples.Example_2
 {
     public class Example_2 : IExampleChoice
     {
-        private readonly RepositoryExample_2 Repository;
+        private readonly Example2Repository Repository;
         public Example_2()
         {
-            Repository = new RepositoryExample_2(ConnectionStore.ConnectionString);
+            Repository = new Example2Repository(ConnectionStore.ConnectionString);
         }
 
         public void Show()
