@@ -17,6 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicesTests", "Exercices
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{85A84114-DB08-4826-B9E5-25E9DB565E04}"
 	ProjectSection(SolutionItems) = preProject
+		InitializeScripts.sql = InitializeScripts.sql
 		Files\Szkolenie warsztatowe Dapper.pptx = Files\Szkolenie warsztatowe Dapper.pptx
 	EndProjectSection
 EndProject
