@@ -2,6 +2,7 @@
 using DAL.ViewModel;
 using Exercices.Exercices.Exercice_1;
 using NUnit.Framework;
+using System.Linq;
 
 namespace ExercicesTests
 {
@@ -20,11 +21,18 @@ namespace ExercicesTests
         }
 
         [Test]
-        public void RunExerciceMethodShouldReturnAtLeastOneRealObjectFromEmployeeTableDapperDBWithAllProperties()
+        public void RunExerciceMethodShouldReturnExactlyOneRealObjectFromEmployeeTableDapperDBWithAllEntityProperties()
         {
             Exercice_1 _firstExercice = new Exercice_1();
-            var _employee = _firstExercice.RunExercice();
-            var _expectedEmployee = new TestRepository(ConnectionStore.ConnectionString).GetAllEmployees();
+            EmployeeDTO _employee = _firstExercice.RunExercice() as EmployeeDTO;
+            var _employeeList = new TestRepository(ConnectionStore.ConnectionString).GetAllEmployees();
+            var _containsResult = _employeeList
+                .Any(x => x.AddressId == _employee.AddressId &&
+                x.EmployeeId == _employee.EmployeeId &&
+                x.FirstName == _employee.FirstName &&
+                x.LastName == _employee.LastName);
+
+            Assert.IsTrue(_containsResult);
         }
     }
 }
