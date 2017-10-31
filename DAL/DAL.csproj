@@ -49,14 +49,11 @@
     <Compile Include="Repository\Example1Repository.cs" />
     <Compile Include="Repository\Example2Repository.cs" />
     <Compile Include="ViewModel\EmployeeDTO.cs" />
-    <Compile Include="Repository\RepositoryExample_1.cs" />
-    <Compile Include="Repository\RepositoryExample_2.cs" />
     <Compile Include="Scripts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Scripts.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Example_1ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
