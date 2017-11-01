@@ -133,8 +133,8 @@ CREATE TABLE [dbo].[Address](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
-	INSERT [dbo].[Address] ([AddressId], [City], [PostCode], [Street], [HouseNumber], [LocalNumber]) VALUES (1, 'Katowice', '41-xxx', 'Katowicka', '1', '2')
-	INSERT [dbo].[Address] ([AddressId], [City], [PostCode], [Street], [HouseNumber], [LocalNumber]) VALUES (2, 'Zabrze', '41-xxx', 'Zabrzanska', '11', '22')
+	INSERT [dbo].[Address] ([City], [PostCode], [Street], [HouseNumber], [LocalNumber]) VALUES ('Katowice', '41-xxx', 'Katowicka', '1', '2')
+	INSERT [dbo].[Address] ([City], [PostCode], [Street], [HouseNumber], [LocalNumber]) VALUES ('Zabrze', '41-xxx', 'Zabrzanska', '11', '22')
 END
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Contract]') AND type in (N'U'))
@@ -154,7 +154,6 @@ CREATE TABLE [dbo].[Contract](
 	INSERT [dbo].[Contract] ([EmployeeId], [Type], [DateFrom], [DateTo]) VALUES (1, 1, '2017-06-01', '2017-07-30')
 	INSERT [dbo].[Contract] ([EmployeeId], [Type], [DateFrom], [DateTo]) VALUES (1, 1, '2017-08-01', '2018-01-01')
 	INSERT [dbo].[Contract] ([EmployeeId], [Type], [DateFrom], [DateTo]) VALUES (2, 1, '2017-03-01', '2017-10-30')
-	INSERT [dbo].[Contract] ([EmployeeId], [Type], [DateFrom], [DateTo]) VALUES (3, 2, '2017-06-01', '2019-07-30')
 END
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Employee]') AND type in (N'U'))
@@ -172,7 +171,7 @@ CREATE TABLE [dbo].[Employee](
 ) ON [PRIMARY]
 
 	INSERT [dbo].[Employee] ([UserId], [AddressId], [FirstName], [LastName]) VALUES (1, 1, 'Jan', 'Kowalski')
-	INSERT [dbo].[Employee] ([UserId], [AddressId], [FirstName], [LastName]) VALUES (3, 3, 'Mietek', 'Gwozdz')
+	INSERT [dbo].[Employee] ([UserId], [AddressId], [FirstName], [LastName]) VALUES (3, 2, 'Mietek', 'Gwozdz')
 END
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[User]') AND type in (N'U'))
@@ -188,8 +187,8 @@ CREATE TABLE [dbo].[User](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
-	INSERT [dbo].[User] ([UserName], [Password], [ModifiedDate]) VALUES ('Janex', 'secretPassword', '2017-10-31')
-	INSERT [dbo].[User] ([UserName], [Password], [ModifiedDate]) VALUES ('UserSecond', 'anotherPassword', '2017-09-31')
+	INSERT [dbo].[User] ([UserName], [Password], [ModifiedDate]) VALUES ('Janex', 'secretPassword', '2017-10-30')
+	INSERT [dbo].[User] ([UserName], [Password], [ModifiedDate]) VALUES ('UserSecond', 'anotherPassword', '2017-09-30')
 	INSERT [dbo].[User] ([UserName], [Password], [ModifiedDate]) VALUES ('Mietghar', 'abcd', '2017-10-15')
 END</value>
   </data>
