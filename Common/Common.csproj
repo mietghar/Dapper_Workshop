@@ -48,6 +48,12 @@
     <Compile Include="Utility\GetBackChooser.cs" />
     <Compile Include="Utility\ConnectionStore.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{EFC2B227-1FD9-4167-9314-C313FA930851}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

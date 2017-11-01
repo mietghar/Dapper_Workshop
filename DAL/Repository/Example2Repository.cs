@@ -19,10 +19,10 @@ namespace DAL.Repository
                 return connection.Execute("EmployeeInsert",
                     new[]
                     {
-                        new {FirstName = "Jerzy", LastName = "Killer", AddressId = 38},
-                        new {FirstName = "Beata", LastName = "Bęben", AddressId = 33},
-                        new {FirstName = "Cyprian", LastName = "Cebula", AddressId = 7},
-                        new {FirstName = "Karol", LastName = "Kowalski", AddressId = 8}
+                        new {UserId = 1, FirstName = "Jerzy", LastName = "Killer", AddressId = 38},
+                        new {UserId = 1, FirstName = "Beata", LastName = "Bęben", AddressId = 33},
+                        new {UserId = 2, FirstName = "Cyprian", LastName = "Cebula", AddressId = 7},
+                        new {UserId = 3, FirstName = "Karol", LastName = "Kowalski", AddressId = 8}
                     }, commandType: System.Data.CommandType.StoredProcedure);
             }
         }

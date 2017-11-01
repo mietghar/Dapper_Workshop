@@ -16,7 +16,7 @@ namespace Examples.Examples.Example_2
         public void Show()
         {
             Console.WriteLine("Example 2\n\n");
-            Console.WriteLine("Example shows Execute method to insert data through stored SQL DB procedure passing anonymous parameters:\n\n");
+            Console.WriteLine("Example shows \"Execute\" method to insert data through stored SQL DB procedure passing anonymous parameters:\n\n");
 
             try
             {

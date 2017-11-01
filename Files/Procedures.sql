@@ -6,11 +6,12 @@ BEGIN
 EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[EmployeeInsert]
 @FirstName varchar(50),
 @LastName varchar(50) = null,
-@AddressId int
+@AddressId int,
+@UserId int
 AS
 BEGIN
 IF NOT EXISTS (SELECT EmployeeID FROM Employee WHERE FirstName = @FirstName AND LastName = @LastName)
-BEGIN INSERT INTO Employee (FirstName, LastName, AddressId)
-Values (@FirstName, @LastName, @AddressId) END
+BEGIN INSERT INTO Employee (UserId, FirstName, LastName, AddressId)
+Values (@UserId, @FirstName, @LastName, @AddressId) END
 END'
 END

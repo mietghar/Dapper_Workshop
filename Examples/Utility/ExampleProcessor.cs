@@ -31,6 +31,9 @@ namespace Examples.Utility
                     case '2':
                         Example = EExample.Example_2;
                         break;
+                    case '3':
+                        Example = EExample.Example_3;
+                        break;
                     default:
                         choosed = false;
                         break;

@@ -4,6 +4,7 @@
     {
         Quit = 0,
         Example_1,
-        Example_2
+        Example_2,
+        Example_3
     }
 }
