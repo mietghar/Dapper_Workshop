@@ -49,7 +49,7 @@ namespace Dapper_Workshop
                         new ExampleProcessor().ChooseAndShow();
                         break;
                     case EActivityType.Exercice:
-                        new ExerciceFactory().Choose();
+                        new ExerciceProcessor().ChooseAndShow();
                         break;
                     default: break;
                 }
