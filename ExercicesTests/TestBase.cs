@@ -27,5 +27,21 @@ namespace ExercicesTests
                 return connection.Query<EmployeeDTO>("SELECT * FROM Employee").ToList();
             }
         }
+
+        public IEnumerable<EmployeeDTO> GetAllAddresses()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                return connection.Query<EmployeeDTO>("SELECT * FROM Address").ToList();
+            }
+        }
+
+        public int GetNumberOfAddresses()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                return connection.QueryFirst<int>("SELECT COUNT(*) FROM Address");
+            }
+        }
     }
 }
