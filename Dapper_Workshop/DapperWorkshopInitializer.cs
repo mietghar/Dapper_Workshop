@@ -1,22 +1,18 @@
 ﻿using Common.Utility;
 using DAL.Repository;
-using System.Data.SqlClient;
 
 namespace Dapper_Workshop
 {
     public class DapperWorkshopInitializer
     {
-        private readonly InitializationRepository Repository;
+        private readonly InitializationRepository _repository;
 
         public DapperWorkshopInitializer()
         {
-            Repository = new InitializationRepository(ConnectionStore.ConnectionString);
+            _repository = new InitializationRepository(ConnectionStore.ConnectionString);
         }
 
-        public void InitializeDapperWorkshops()
-        {
-            Repository.Initialize();
-
-        }
+        public void InitializeDapperWorkshops() => _repository.Initialize();
+        public void ReInitializeTable() => new PointsProcessor().ReInitializeTable();
     }
 }

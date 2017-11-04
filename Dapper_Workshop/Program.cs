@@ -24,7 +24,8 @@ namespace Dapper_Workshop
             {
                 Console.Clear();
                 Console.WriteLine("Type your choice E - example, W - workshop exercice, Q - quit current app.");
-                var _choice = Console.ReadKey().KeyChar;
+                var _choiceSpecial = Console.ReadKey();
+                var _choice = _choiceSpecial.KeyChar;
                 _choice = char.ToLower(_choice);
                 Console.WriteLine();
                 switch (_choice)
@@ -40,6 +41,15 @@ namespace Dapper_Workshop
                     case 'q':
                         Console.WriteLine("You choosed to quit");
                         Activity = EActivityType.Quit;
+                        break;
+                    case '\0':
+                        switch (_choiceSpecial.Key)
+                        {
+                            case ConsoleKey.F9:
+                                new DapperWorkshopInitializer().ReInitializeTable();
+                                break;
+                        }
+                        Activity = EActivityType.DoNothing;
                         break;
                     default: continue;
                 }

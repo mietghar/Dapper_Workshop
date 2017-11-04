@@ -7,10 +7,10 @@ namespace Examples.Examples.Example_2
 {
     public class Example_2 : IExampleChoice
     {
-        private readonly Example2Repository Repository;
+        private readonly Example2Repository _repository;
         public Example_2()
         {
-            Repository = new Example2Repository(ConnectionStore.ConnectionString);
+            _repository = new Example2Repository(ConnectionStore.ConnectionString);
         }
 
         public void Show()
@@ -23,8 +23,8 @@ namespace Examples.Examples.Example_2
                 Console.WriteLine("Procedure execution, press any key to begin:");
                 Console.ReadKey();
                 Console.WriteLine();
-                var _rows = Repository.GetInsertQueryRows();
-                Console.WriteLine(string.Format("Number of affected rows: {0}",(_rows <=0)? 0 : _rows));
+                var rows = _repository.GetInsertQueryRows();
+                Console.WriteLine(string.Format("Number of affected rows: {0}",(rows <=0)? 0 : rows));
             }
             catch (Exception exception)
             {

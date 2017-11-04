@@ -7,10 +7,10 @@ namespace Examples.Examples.Example_1
 {
     public class Example_1 : IExampleChoice
     {
-        private readonly Example1Repository Repository;
+        private readonly Example1Repository _repository;
         public Example_1()
         {
-            Repository = new Example1Repository(ConnectionStore.ConnectionString);
+            _repository = new Example1Repository(ConnectionStore.ConnectionString);
         }
         public void Show()
         {
@@ -20,13 +20,13 @@ namespace Examples.Examples.Example_1
             try
             {
                 Console.WriteLine("Single object:");
-                var _employee = Repository.GetPerson();
-                var _employees = Repository.GetPeople();
-                ConsoleExtension.WriteObject(_employee);
+                var employee = _repository.GetPerson();
+                var employees = _repository.GetPeople();
+                ConsoleExtension.WriteObject(employee);
                 Console.WriteLine("\n\nPress any buttons to show all objects:/n");
                 Console.ReadKey();
                 Console.WriteLine();
-                ConsoleExtension.WriteObject(_employees);
+                ConsoleExtension.WriteObject(employees);
             }
             catch (Exception exception)
             {

@@ -4,6 +4,7 @@
     {
         Example = 1,
         Exercice,
-        Quit
+        Quit,
+        DoNothing
     }
 }
