@@ -82,5 +82,29 @@ namespace Common.Properties {
                 this["FastestORMTry"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool QueryFirstOrDefaultQuestion {
+            get {
+                return ((bool)(this["QueryFirstOrDefaultQuestion"]));
+            }
+            set {
+                this["QueryFirstOrDefaultQuestion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int QueryFirstOrDefaultQuestionTry {
+            get {
+                return ((int)(this["QueryFirstOrDefaultQuestionTry"]));
+            }
+            set {
+                this["QueryFirstOrDefaultQuestionTry"] = value;
+            }
+        }
     }
 }

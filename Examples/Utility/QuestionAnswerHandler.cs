@@ -25,6 +25,9 @@ namespace Examples.Utility
                         case EQuestionType.FastestORM:
                             PrintAnswerInterpretation(_questionType, true);
                             return true;
+                        case EQuestionType.QueryFirstOrDefaultQuestion:
+                            PrintAnswerInterpretation(_questionType, false);
+                            return true;
                         default: return false;
                     }
                 case '2':
@@ -36,16 +39,19 @@ namespace Examples.Utility
                         case EQuestionType.FastestORM:
                             PrintAnswerInterpretation(_questionType, false);
                             return true;
+                        case EQuestionType.QueryFirstOrDefaultQuestion:
+                            PrintAnswerInterpretation(_questionType, false);
+                            return true;
                         default: return false;
                     }
                 case '3':
                     switch (_questionType)
                     {
-                        case EQuestionType.QueryFirstQuestion:
-                            PrintAnswerInterpretation(_questionType, false);
-                            return false;
                         case EQuestionType.FastestORM:
                             PrintAnswerInterpretation(_questionType, false);
+                            return true;
+                        case EQuestionType.QueryFirstOrDefaultQuestion:
+                            PrintAnswerInterpretation(_questionType, true);
                             return true;
                         default: return false;
                     }

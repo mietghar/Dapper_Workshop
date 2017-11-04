@@ -2,6 +2,7 @@
 using Examples.Examples.Example_1;
 using Examples.Examples.Example_2;
 using Examples.Examples.Example_3;
+using Examples.Examples.Example_4;
 using Examples.Examples.Interface;
 
 namespace Examples.Utility
@@ -21,6 +22,9 @@ namespace Examples.Utility
                     break;
                 case EExample.Example_3:
                     choice = new Example_3();
+                    break;
+                case EExample.Example_4:
+                    choice = new Example_4();
                     break;
                 case EExample.Quit:
                 default: break;
