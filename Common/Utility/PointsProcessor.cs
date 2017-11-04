@@ -20,6 +20,10 @@ namespace Common.Utility
                     Settings.Default.QueryFirstQuestion = result;
                     Settings.Default.QueryFirstQuestionTry++;
                     break;
+                case EQuestionType.FastestORM:
+                    Settings.Default.FastestORM = result;
+                    Settings.Default.FastestORMTry++;
+                    break;
             }
             Settings.Default.Save();
             UpdatePointsState();
@@ -28,13 +32,14 @@ namespace Common.Utility
 
         private void UpdatePointsState()
         {
-            Dictionary<bool, int> pointsTable = new Dictionary<bool, int>();
-            pointsTable.Add(Settings.Default.QueryFirstQuestion, Settings.Default.QueryFirstQuestionTry);
+            IList<Point> pointsTable = new List<Point>();
+            pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstQuestion, QuestionType = EQuestionType.QueryFirstQuestion, TryCount = Settings.Default.QueryFirstQuestionTry });
+            pointsTable.Add(new Point { LastAnswer = Settings.Default.FastestORM, QuestionType = EQuestionType.FastestORM, TryCount = Settings.Default.FastestORMTry });
 
             double endPoints = 0.0;
 
-            foreach(KeyValuePair<bool, int> record in pointsTable)
-                endPoints += (record.Key) ? 1.0 / record.Value : 0.0;
+            foreach (var point in pointsTable)
+                endPoints += (point.LastAnswer) ? 1.0 / point.TryCount : 0.0;
 
             Settings.Default.PointsState = endPoints;
         }
@@ -46,6 +51,8 @@ namespace Common.Utility
         {
             Settings.Default.QueryFirstQuestion = false;
             Settings.Default.QueryFirstQuestionTry = 0;
+            Settings.Default.FastestORM = false;
+            Settings.Default.FastestORMTry = 0;
             Settings.Default.PointsState = 0.0;
         }
     }

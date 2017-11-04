@@ -58,5 +58,29 @@ namespace Common.Properties {
                 this["PointsState"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FastestORM {
+            get {
+                return ((bool)(this["FastestORM"]));
+            }
+            set {
+                this["FastestORM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FastestORMTry {
+            get {
+                return ((int)(this["FastestORMTry"]));
+            }
+            set {
+                this["FastestORMTry"] = value;
+            }
+        }
     }
 }

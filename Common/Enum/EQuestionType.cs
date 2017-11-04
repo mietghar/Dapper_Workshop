@@ -2,6 +2,7 @@
 {
     public enum EQuestionType
     {
-        QueryFirstQuestion = 1
+        QueryFirstQuestion = 1,
+        FastestORM = 2
     }
 }

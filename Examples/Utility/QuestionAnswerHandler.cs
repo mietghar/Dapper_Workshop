@@ -21,19 +21,34 @@ namespace Examples.Utility
                     {
                         case EQuestionType.QueryFirstQuestion:
                             PrintAnswerInterpretation(_questionType, true);
-                            break;
-                        default: break;
+                            return true;
+                        case EQuestionType.FastestORM:
+                            PrintAnswerInterpretation(_questionType, true);
+                            return true;
+                        default: return false;
                     }
-                    return true;
                 case '2':
                     switch (_questionType)
                     {
                         case EQuestionType.QueryFirstQuestion:
                             PrintAnswerInterpretation(_questionType, false);
-                            break;
-                        default: break;
+                            return true;
+                        case EQuestionType.FastestORM:
+                            PrintAnswerInterpretation(_questionType, false);
+                            return true;
+                        default: return false;
                     }
-                    return true;
+                case '3':
+                    switch (_questionType)
+                    {
+                        case EQuestionType.QueryFirstQuestion:
+                            PrintAnswerInterpretation(_questionType, false);
+                            return false;
+                        case EQuestionType.FastestORM:
+                            PrintAnswerInterpretation(_questionType, false);
+                            return true;
+                        default: return false;
+                    }
 
                 default: return false;
             }
@@ -47,7 +62,7 @@ namespace Examples.Utility
             {
                 processor.ProcessPoints(questionType, result);
                 processor.PrintPointsState();
-            }                
+            }
         }
     }
 }

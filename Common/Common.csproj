@@ -58,6 +58,7 @@
     <Compile Include="Utility\ConsoleExtension.cs" />
     <Compile Include="Utility\GetBackChooser.cs" />
     <Compile Include="Utility\ConnectionStore.cs" />
+    <Compile Include="Utility\Point.cs" />
     <Compile Include="Utility\PointsProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
