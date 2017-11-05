@@ -42,7 +42,7 @@ namespace Examples.Examples.Example_4
                 Console.ReadKey();
                 Console.WriteLine("\nFirst or default object if found more than 1 records:");
                 var firstOrDefaultEmployee = _repository.GetFirstOrDefaultEmployee();
-                ConsoleExtension.WriteObject(firstOrDefaultEmployee);
+                ConsoleExtension.WriteDynamicObject(firstOrDefaultEmployee);
                 Console.WriteLine("\nSecond case, press any key to proceed:");
                 Console.ReadKey();
                 Console.WriteLine("\n");
@@ -51,7 +51,7 @@ namespace Examples.Examples.Example_4
                 Console.WriteLine("Db table cleared");
                 Console.WriteLine("\nFirst or default object if no records found:");
                 var firstOrDefaultEmployeeIfEmpty = _repository.GetFirstOrDefaultEmployee();
-                ConsoleExtension.WriteObject(firstOrDefaultEmployeeIfEmpty);
+                ConsoleExtension.WriteDynamicObject(firstOrDefaultEmployeeIfEmpty);
                 Console.WriteLine("Reinitializing db tables");
                 _initializationRepository.Initialize();
                 Console.WriteLine("Db tables reinitialized");

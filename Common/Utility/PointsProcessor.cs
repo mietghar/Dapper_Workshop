@@ -28,6 +28,10 @@ namespace Common.Utility
                     Settings.Default.QueryFirstOrDefaultQuestion = result;
                     Settings.Default.QueryFirstOrDefaultQuestionTry++;
                     break;
+                case EQuestionType.QuerySingleQuestion:
+                    Settings.Default.QuerySingleQuestion = result;
+                    Settings.Default.QuerySingleQuestionTry++;
+                    break;
             }
             Settings.Default.Save();
             UpdatePointsState();
@@ -40,11 +44,15 @@ namespace Common.Utility
             pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstQuestion, QuestionType = EQuestionType.QueryFirstQuestion, TryCount = Settings.Default.QueryFirstQuestionTry });
             pointsTable.Add(new Point { LastAnswer = Settings.Default.FastestORM, QuestionType = EQuestionType.FastestORM, TryCount = Settings.Default.FastestORMTry });
             pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstOrDefaultQuestion, QuestionType = EQuestionType.QueryFirstOrDefaultQuestion, TryCount = Settings.Default.QueryFirstOrDefaultQuestionTry });
+            pointsTable.Add(new Point { LastAnswer = Settings.Default.QuerySingleQuestion, QuestionType = EQuestionType.QuerySingleQuestion, TryCount = Settings.Default.QuerySingleQuestionTry });
 
             double endPoints = 0.0;
 
             foreach (var point in pointsTable)
-                endPoints += (point.LastAnswer) ? 1.0 / point.TryCount : 0.0;
+            {
+                if (point.TryCount == 0) endPoints = 0.0;
+                else endPoints += (point.LastAnswer) ? 1.0 / point.TryCount : 0.0;
+            }
 
             Settings.Default.PointsState = endPoints;
         }

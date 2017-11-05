@@ -6,6 +6,7 @@
         Example_1,
         Example_2,
         Example_3,
-        Example_4
+        Example_4,
+        Example_5
     }
 }

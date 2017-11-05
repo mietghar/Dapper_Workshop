@@ -197,6 +197,12 @@ IF NOT EXISTS (SELECT * FROM Employee)
 BEGIN
 INSERT INTO Employee (UserId, AddressId, FirstName, LastName) 
 VALUES (1, 1, 'Jan', 'Kowalski'), (3, 2, 'Mietek', 'Gwozdz'), (2, 1, 'Łukasz', 'Szustak')
+END
+
+IF NOT EXISTS (SELECT * FROM Address)
+BEGIN
+INSERT INTO Address (City, PostCode, Street, HouseNumber, LocalNumber) 
+VALUES ('Katowice', '41-xxx', 'Katowicka', '1', '2'), ('Zabrze', '41-xxx', 'Zabrzanska', '11', '22')
 END</value>
   </data>
 </root>

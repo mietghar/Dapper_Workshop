@@ -4,6 +4,8 @@
     {
         QueryFirstQuestion = 1,
         FastestORM,
-        QueryFirstOrDefaultQuestion
+        QueryFirstOrDefaultQuestion,
+        QuerySingleQuestion,
+        QuerySingleOrDefaultQuestion
     }
 }

@@ -21,7 +21,7 @@ namespace Examples.Examples.Example_3
         public void Show()
         {
             Console.WriteLine("Example 3\n\n");
-            Console.WriteLine("Example shows \"QueryFirst\" method to select data from Employee Table:\n\n");
+            Console.WriteLine("Example shows \"QueryFirst\" method to select data from Employee table:\n\n");
 
             try
             {

@@ -28,6 +28,9 @@ namespace Examples.Utility
                         case EQuestionType.QueryFirstOrDefaultQuestion:
                             PrintAnswerInterpretation(_questionType, false);
                             return true;
+                        case EQuestionType.QuerySingleQuestion:
+                            PrintAnswerInterpretation(_questionType, false);
+                            return true;
                         default: return false;
                     }
                 case '2':
@@ -42,6 +45,9 @@ namespace Examples.Utility
                         case EQuestionType.QueryFirstOrDefaultQuestion:
                             PrintAnswerInterpretation(_questionType, false);
                             return true;
+                        case EQuestionType.QuerySingleQuestion:
+                            PrintAnswerInterpretation(_questionType, true);
+                            return true;
                         default: return false;
                     }
                 case '3':
@@ -52,6 +58,9 @@ namespace Examples.Utility
                             return true;
                         case EQuestionType.QueryFirstOrDefaultQuestion:
                             PrintAnswerInterpretation(_questionType, true);
+                            return true;
+                        case EQuestionType.QuerySingleQuestion:
+                            PrintAnswerInterpretation(_questionType, false);
                             return true;
                         default: return false;
                     }

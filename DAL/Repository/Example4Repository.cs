@@ -25,12 +25,13 @@ namespace DAL.Repository
                         connection.Query("TRUNCATE TABLE Employee", null, transaction);
                         transaction.Commit();
                     }
-                    catch
+                    catch(Exception exception)
                     {
                         try
                         {
                             Console.WriteLine("Exception thrown during truncating table Employee, try to rollback changes");
                             transaction.Rollback();
+                            Console.WriteLine("Rollback success");
                         }
                         catch
                         {
@@ -45,7 +46,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                return connection.QueryFirstOrDefault<EmployeeDTO>("SELECT * FROM Employee");
+                return connection.QueryFirstOrDefault("SELECT * FROM Employee");
             }
         }
     }

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.CSharp.RuntimeBinder;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
 
 namespace Common.Utility
 {
@@ -20,6 +23,37 @@ namespace Common.Utility
             }
 
             WriteObjectPropertiesInConsole(objectToWrite);
+        }
+
+        public static void WriteDynamicObject(object objectToWrite)
+        {
+            if (objectToWrite == null)
+            {
+                Console.WriteLine($"Object is of type null");
+                return;
+            }
+            if (objectToWrite.GetType().GetInterfaces().Contains(typeof(IDynamicMetaObjectProvider)))
+                WriteDynamicObjectPropertiesInConsole(objectToWrite);
+            else Console.WriteLine("Object is not dynamic");
+        }
+
+        private static void WriteDynamicObjectPropertiesInConsole(dynamic objectToWrite)
+        {
+            try
+            {
+                var employee = new
+                {
+                    objectToWrite.FirstName,
+                    objectToWrite.LastName,
+                    objectToWrite.EmployeeId,
+                    objectToWrite.AddressId
+                };
+                if (employee != null) WriteObjectPropertiesInConsole(employee);
+            }
+            catch(RuntimeBinderException exception)
+            {
+                Console.WriteLine($"Exception thrown\n{exception.Message}");
+            }
         }
 
         private static void WriteObjectList(IEnumerable<object> objectToWrite)
