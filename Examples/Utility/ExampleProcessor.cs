@@ -43,6 +43,9 @@ namespace Examples.Utility
                     case '6':
                         Example = EExample.Example_6;
                         break;
+                    case '7':
+                        Example = EExample.Example_7;
+                        break;
                     default:
                         choosed = false;
                         break;

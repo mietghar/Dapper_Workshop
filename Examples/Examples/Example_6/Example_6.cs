@@ -42,8 +42,8 @@ namespace Examples.Examples.Example_6
                 Console.WriteLine("\nSingleOrDefault object if found more than 1 records:");
                 try
                 {
-                    var singleIfMany = _repository.GetSingleOrDefaultAddress();
-                    ConsoleExtension.WriteObject(singleIfMany);
+                    var singleOrDefaultIfMany = _repository.GetSingleOrDefaultAddress();
+                    ConsoleExtension.WriteObject(singleOrDefaultIfMany);
                 }
                 catch (Exception exception)
                 {
@@ -60,8 +60,8 @@ namespace Examples.Examples.Example_6
                 Console.WriteLine("\nSingleOrDefault object if single record found:");
                 try
                 {
-                    var single = _repository.GetSingleOrDefaultAddress();
-                    ConsoleExtension.WriteObject(single);
+                    var singleOrDefault = _repository.GetSingleOrDefaultAddress();
+                    ConsoleExtension.WriteObject(singleOrDefault);
                 }
                 catch (Exception exception)
                 {
@@ -76,8 +76,8 @@ namespace Examples.Examples.Example_6
                 Console.WriteLine("\nSingleOrDefault object if no records found:");
                 try
                 {
-                    var singleIfEmpty = _repository.GetSingleOrDefaultAddress();
-                    ConsoleExtension.WriteObject(singleIfEmpty);
+                    var singleOrDefaultIfEmpty = _repository.GetSingleOrDefaultAddress();
+                    ConsoleExtension.WriteObject(singleOrDefaultIfEmpty);
                 }
                 catch (Exception exception)
                 {
