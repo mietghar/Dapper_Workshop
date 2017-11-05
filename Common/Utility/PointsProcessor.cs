@@ -32,6 +32,10 @@ namespace Common.Utility
                     Settings.Default.QuerySingleQuestion = result;
                     Settings.Default.QuerySingleQuestionTry++;
                     break;
+                case EQuestionType.QuerySingleOrDefaultQuestion:
+                    Settings.Default.QuerySingleOrDefaultQuestion = result;
+                    Settings.Default.QuerySingleOrDefaultQuestionTry++;
+                    break;
             }
             Settings.Default.Save();
             UpdatePointsState();
@@ -45,6 +49,7 @@ namespace Common.Utility
             pointsTable.Add(new Point { LastAnswer = Settings.Default.FastestORM, QuestionType = EQuestionType.FastestORM, TryCount = Settings.Default.FastestORMTry });
             pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstOrDefaultQuestion, QuestionType = EQuestionType.QueryFirstOrDefaultQuestion, TryCount = Settings.Default.QueryFirstOrDefaultQuestionTry });
             pointsTable.Add(new Point { LastAnswer = Settings.Default.QuerySingleQuestion, QuestionType = EQuestionType.QuerySingleQuestion, TryCount = Settings.Default.QuerySingleQuestionTry });
+            pointsTable.Add(new Point { LastAnswer = Settings.Default.QuerySingleOrDefaultQuestion, QuestionType = EQuestionType.QuerySingleOrDefaultQuestion, TryCount = Settings.Default.QuerySingleOrDefaultQuestionTry });
 
             double endPoints = 0.0;
 
@@ -68,6 +73,10 @@ namespace Common.Utility
             Settings.Default.FastestORMTry = 0;
             Settings.Default.QueryFirstOrDefaultQuestion = false;
             Settings.Default.QueryFirstOrDefaultQuestionTry = 0;
+            Settings.Default.QuerySingleQuestion = false;
+            Settings.Default.QuerySingleQuestionTry = 0;
+            Settings.Default.QuerySingleOrDefaultQuestion = false;
+            Settings.Default.QuerySingleOrDefaultQuestionTry = 0;
             Settings.Default.PointsState = 0.0;
         }
     }

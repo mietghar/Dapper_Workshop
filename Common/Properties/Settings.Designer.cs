@@ -130,5 +130,29 @@ namespace Common.Properties {
                 this["QuerySingleQuestionTry"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool QuerySingleOrDefaultQuestion {
+            get {
+                return ((bool)(this["QuerySingleOrDefaultQuestion"]));
+            }
+            set {
+                this["QuerySingleOrDefaultQuestion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int QuerySingleOrDefaultQuestionTry {
+            get {
+                return ((int)(this["QuerySingleOrDefaultQuestionTry"]));
+            }
+            set {
+                this["QuerySingleOrDefaultQuestionTry"] = value;
+            }
+        }
     }
 }

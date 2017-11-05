@@ -48,6 +48,7 @@
     <Compile Include="Repository\Example3Repository.cs" />
     <Compile Include="Repository\Example4Repository.cs" />
     <Compile Include="Repository\Example5Repository.cs" />
+    <Compile Include="Repository\Example6Repository.cs" />
     <Compile Include="Repository\InitializationRepository.cs" />
     <Compile Include="Repository\Example1Repository.cs" />
     <Compile Include="Repository\Example2Repository.cs" />

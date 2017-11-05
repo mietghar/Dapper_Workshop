@@ -45,6 +45,7 @@
     <Compile Include="Examples\Example_3\Example_3.cs" />
     <Compile Include="Examples\Example_4\Example_4.cs" />
     <Compile Include="Examples\Example_5\Example_5.cs" />
+    <Compile Include="Examples\Example_6\Example_6.cs" />
     <Compile Include="Examples\Interface\IExampleChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ExampleFactory.cs" />
