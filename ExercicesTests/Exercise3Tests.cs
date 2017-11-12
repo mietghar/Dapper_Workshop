@@ -14,7 +14,7 @@ namespace ExercicesTests
         }
 
         [Test]
-        public void run_exercise_thirs_should_update_one_address()
+        public void run_third_exercice_should_update_one_address()
         {
             int oldNumberOfAddresses = _testRepostory.GetNumberOfAddresses();
 
