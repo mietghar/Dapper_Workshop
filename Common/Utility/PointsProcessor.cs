@@ -7,6 +7,7 @@ namespace Common.Utility
 {
     public class PointsProcessor : IDisposable
     {
+        private List<Point> _pointsTable = new List<Point>();
         public void Dispose()
         {
             Settings.Default.Save();
@@ -42,18 +43,23 @@ namespace Common.Utility
             Settings.Default.Save();
         }
 
+        private void PopulatePointsTable()
+        {
+            _pointsTable.Clear();
+            _pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstQuestion, QuestionType = EQuestionType.QueryFirstQuestion, TryCount = Settings.Default.QueryFirstQuestionTry });
+            _pointsTable.Add(new Point { LastAnswer = Settings.Default.FastestORM, QuestionType = EQuestionType.FastestORM, TryCount = Settings.Default.FastestORMTry });
+            _pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstOrDefaultQuestion, QuestionType = EQuestionType.QueryFirstOrDefaultQuestion, TryCount = Settings.Default.QueryFirstOrDefaultQuestionTry });
+            _pointsTable.Add(new Point { LastAnswer = Settings.Default.QuerySingleQuestion, QuestionType = EQuestionType.QuerySingleQuestion, TryCount = Settings.Default.QuerySingleQuestionTry });
+            _pointsTable.Add(new Point { LastAnswer = Settings.Default.QuerySingleOrDefaultQuestion, QuestionType = EQuestionType.QuerySingleOrDefaultQuestion, TryCount = Settings.Default.QuerySingleOrDefaultQuestionTry });
+        }
+
         private void UpdatePointsState()
         {
-            IList<Point> pointsTable = new List<Point>();
-            pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstQuestion, QuestionType = EQuestionType.QueryFirstQuestion, TryCount = Settings.Default.QueryFirstQuestionTry });
-            pointsTable.Add(new Point { LastAnswer = Settings.Default.FastestORM, QuestionType = EQuestionType.FastestORM, TryCount = Settings.Default.FastestORMTry });
-            pointsTable.Add(new Point { LastAnswer = Settings.Default.QueryFirstOrDefaultQuestion, QuestionType = EQuestionType.QueryFirstOrDefaultQuestion, TryCount = Settings.Default.QueryFirstOrDefaultQuestionTry });
-            pointsTable.Add(new Point { LastAnswer = Settings.Default.QuerySingleQuestion, QuestionType = EQuestionType.QuerySingleQuestion, TryCount = Settings.Default.QuerySingleQuestionTry });
-            pointsTable.Add(new Point { LastAnswer = Settings.Default.QuerySingleOrDefaultQuestion, QuestionType = EQuestionType.QuerySingleOrDefaultQuestion, TryCount = Settings.Default.QuerySingleOrDefaultQuestionTry });
+            PopulatePointsTable();
 
             double endPoints = 0.0;
 
-            foreach (var point in pointsTable)
+            foreach (var point in _pointsTable)
             {
                 if (point.TryCount == 0) endPoints = 0.0;
                 else endPoints += (point.LastAnswer) ? 1.0 / point.TryCount : 0.0;
