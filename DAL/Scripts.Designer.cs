@@ -73,7 +73,7 @@ namespace DAL {
         /// CONSTRAINT [PK_Address] PRIMARY KEY CLUSTERED 
         ///(
         ///	[AddressId] ASC
-        ///)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_R [rest of string was truncated]&quot;;.
+        ///)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = O [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InitializeScripts {
             get {
