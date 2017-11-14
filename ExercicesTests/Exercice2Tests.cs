@@ -1,5 +1,5 @@
 ﻿using Common.Utility;
-using Exercices.Exercices.Exercise_2;
+using Exercices.Exercices.Exercice_2;
 using NUnit.Framework;
 
 namespace ExercicesTests

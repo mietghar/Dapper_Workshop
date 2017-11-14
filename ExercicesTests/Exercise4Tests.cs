@@ -2,8 +2,8 @@
 using System.Linq;
 using Common.Utility;
 using DAL.ViewModel;
-using Exercices.Exercise_4;
 using NUnit.Framework;
+using Exercices.Exercices.Exercice_4;
 
 namespace ExercicesTests
 {
