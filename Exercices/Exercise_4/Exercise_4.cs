@@ -31,10 +31,10 @@ namespace Exercices.Exercise_4
 
             using (SqlConnection connection = new SqlConnection(ConnectionStore.ConnectionString))
             {
-                return connection.Query<AddressDTO>(query, new { @AddressesIds = _addressIds });
+                return connection.Query<AddressDTO>(query, new { @AddressesIds = _addressIds }).ToList();
             }
         }
 
-        public IEnumerable<int> AddressesIds => _addressIds;
+        public IEnumerable<int> AddressIds => _addressIds;
     }
 }
