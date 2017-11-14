@@ -13,7 +13,7 @@ namespace ExercicesTests
 
         public void RunExerciceMethodShouldReturnEmployeeDTOTypeObject()
         {
-            Exercice_1 _firstExercice = new Exercice_1();
+            Exercise_1 _firstExercice = new Exercise_1();
             var _employee = _firstExercice.RunExercice();
             var _employeeType = _employee.GetType();
 
@@ -23,7 +23,7 @@ namespace ExercicesTests
         [Test]
         public void RunExerciceMethodShouldReturnExactlyOneRealObjectFromEmployeeTableDapperDBWithAllEntityProperties()
         {
-            Exercice_1 _firstExercice = new Exercice_1();
+            Exercise_1 _firstExercice = new Exercise_1();
             EmployeeDTO _employee = _firstExercice.RunExercice() as EmployeeDTO;
             var _employeeList = new TestRepository(ConnectionStore.ConnectionString).GetAllEmployees();
             var _containsResult = _employeeList

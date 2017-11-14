@@ -6,7 +6,7 @@ using Dapper;
 using DAL.ViewModel;
 using Exercices.Exercices.Interface;
 
-namespace Exercices.Exercise_4
+namespace Exercices.Exercices.Exercice_4
 {
     public class Exercice_4 : IExerciceChoice
     {

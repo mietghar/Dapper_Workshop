@@ -1,18 +1,15 @@
 ﻿using Common.Enum;
 using Exercices.Exercices.Exercice_1;
-using Exercices.Exercices.Exercise_2;
-using Exercices.Exercices.Exercise_3;
+using Exercices.Exercices.Exercice_2;
+using Exercices.Exercices.Exercice_3;
+using Exercices.Exercices.Exercice_4;
+using Exercices.Exercices.Exercice_5;
 using Exercices.Exercices.Interface;
 
 namespace Exercices.Utility
 {
     public class ExerciceFactory
     {
-        public ExerciceFactory()
-        {
-
-        }
-
         public virtual IExerciceChoice ChooseAndShow(EExercice exercice)
         {
             IExerciceChoice choice = null;
@@ -26,6 +23,12 @@ namespace Exercices.Utility
                     break;
                 case EExercice.Exercice_3:
                     choice = new Exercice_3();
+                    break;
+                case EExercice.Exercice_4:
+                    choice = new Exercice_4();
+                    break;
+                case EExercice.Exercice_5:
+                    choice = new Exercice_5();
                     break;
                 case EExercice.Quit:
                 default: break;

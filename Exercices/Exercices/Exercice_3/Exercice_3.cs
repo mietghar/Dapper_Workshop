@@ -1,6 +1,6 @@
 ﻿using Exercices.Exercices.Interface;
 
-namespace Exercices.Exercices.Exercise_3
+namespace Exercices.Exercices.Exercice_3
 {
     public class Exercice_3 : IExerciceChoice
     {
