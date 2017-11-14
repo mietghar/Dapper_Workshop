@@ -48,6 +48,7 @@
     <Compile Include="Exercices\Exercise_2\Exercise_2.cs" />
     <Compile Include="Exercices\Exercise_3\Exercise_3.cs" />
     <Compile Include="Exercices\Interface\IExerciceChoice.cs" />
+    <Compile Include="Exercise_4\Exercise_4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ExerciceProcessor.cs" />
     <Compile Include="Utility\ExerciceFactory.cs" />
