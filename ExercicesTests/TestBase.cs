@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using Common.Utility;
 using Dapper;
 
 namespace ExercicesTests
@@ -41,6 +42,16 @@ namespace ExercicesTests
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 return connection.QueryFirst<int>("SELECT COUNT(*) FROM Address");
+            }
+        }
+
+        public IEnumerable<AddressDTO> GetAddressByIds(IEnumerable<int> addressIds)
+        {
+            string query = "Select * from [Address] where AddressId IN @AddressesIds";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionStore.ConnectionString))
+            {
+                return connection.Query<AddressDTO>(query, new { @AddressesIds = addressIds });
             }
         }
     }
