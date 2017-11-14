@@ -34,6 +34,12 @@ namespace Exercices.Utility
                     case '3':
                         Exercice = EExercice.Exercice_3;
                         break;
+                    case '4':
+                        Exercice = EExercice.Exercice_4;
+                        break;
+                    case '5':
+                        Exercice = EExercice.Exercice_5;
+                        break;
                     default:
                         choosed = false;
                         break;

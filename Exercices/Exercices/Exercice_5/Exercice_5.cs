@@ -1,5 +1,9 @@
-﻿using Exercices.Exercices.Interface;
-using System;
+﻿using Common.Utility;
+using DAL.ViewModel;
+using Dapper;
+using Exercices.Exercices.Interface;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Exercices.Exercices.Exercice_5
 {
@@ -12,8 +16,12 @@ namespace Exercices.Exercices.Exercice_5
         /// <returns></returns>
         public object RunExercice()
         {
-
-            return 0;
+            using (SqlConnection connection = new SqlConnection(ConnectionStore.ConnectionString))
+            {
+                var sql = "SELECT * FROM [Employee] Emp INNER JOIN [User] Usr ON Usr.UserId = Emp.UserId";
+                var test = connection.Query<EmployeeDTO, UserDTO, EmployeeDTO>(sql, (x, y) => { x.UserId = y.UserId; return x; }, splitOn: "UserId").ToList();
+                return test;
+            }
         }
     }
 }
