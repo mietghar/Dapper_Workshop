@@ -34,8 +34,8 @@ namespace ExercicesTests
         public void run_fourth_exercice_should_select_addresses()
         {
             Exercice_4 fourthExercise = new Exercice_4();
-            IEnumerable<AddressDTO> addressList = fourthExercise.RunExercice() as IEnumerable<AddressDTO>;
-            var addressIds = fourthExercise.AddressesIds;
+            List<AddressDTO> addressList = fourthExercise.RunExercice() as List<AddressDTO>;
+            var addressIds = fourthExercise.AddressIds;
 
             var addressListFromTestRepository = _testRepostory.GetAddressByIds(addressIds);
 

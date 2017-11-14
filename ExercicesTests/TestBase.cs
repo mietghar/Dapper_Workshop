@@ -45,13 +45,13 @@ namespace ExercicesTests
             }
         }
 
-        public IEnumerable<AddressDTO> GetAddressByIds(IEnumerable<int> addressIds)
+        public List<AddressDTO> GetAddressByIds(IEnumerable<int> addressIds)
         {
             string query = "Select * from [Address] where AddressId IN @AddressesIds";
 
             using (SqlConnection connection = new SqlConnection(ConnectionStore.ConnectionString))
             {
-                return connection.Query<AddressDTO>(query, new { @AddressesIds = addressIds });
+                return connection.Query<AddressDTO>(query, new { @AddressesIds = addressIds }).ToList();
             }
         }
     }
