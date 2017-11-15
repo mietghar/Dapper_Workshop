@@ -17,7 +17,6 @@ namespace Exercices.Exercices.Exercice_4
         /// </summary>
         public Exercice_4()
         {
-            _addressIds = Enumerable.Range(1, 2).ToArray();
             // _addressesIds = list of addresses ids
         }
 
@@ -27,12 +26,9 @@ namespace Exercices.Exercices.Exercice_4
         /// </summary>
         public object RunExercice()
         {
-            string query = "Select * from [Address] where AddressId IN @AddressesIds";
+            string query = "Select * from [Address] where Id IN @AddressesIds";
 
-            using (SqlConnection connection = new SqlConnection(ConnectionStore.ConnectionString))
-            {
-                return connection.Query<AddressDTO>(query, new { @AddressesIds = _addressIds }).ToList();
-            }
+            return 0;
         }
 
         public IEnumerable<int> AddressIds => _addressIds;

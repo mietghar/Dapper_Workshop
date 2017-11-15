@@ -64,7 +64,7 @@ namespace DAL {
         ///   Looks up a localized string similar to IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N&apos;[dbo].[Address]&apos;) AND type in (N&apos;U&apos;))
         ///BEGIN
         ///CREATE TABLE [dbo].[Address](
-        ///	[AddressId] [int] IDENTITY(1,1) NOT NULL,
+        ///	[Id] [int] IDENTITY(1,1) NOT NULL,
         ///	[City] [varchar](100) NOT NULL,
         ///	[PostCode] [varchar](10) NOT NULL,
         ///	[Street] [varchar](100) NOT NULL,
@@ -72,8 +72,8 @@ namespace DAL {
         ///	[LocalNumber] [int] NULL,
         /// CONSTRAINT [PK_Address] PRIMARY KEY CLUSTERED 
         ///(
-        ///	[AddressId] ASC
-        ///)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = O [rest of string was truncated]&quot;;.
+        ///	[Id] ASC
+        ///)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InitializeScripts {
             get {
