@@ -28,7 +28,7 @@ namespace ExercicesTests
             var _employeeList = new TestRepository(ConnectionStore.ConnectionString).GetAllEmployees();
             var _containsResult = _employeeList
                 .Any(x => x.AddressId == _employee.AddressId &&
-                x.EmployeeId == _employee.EmployeeId &&
+                x.Id == _employee.Id &&
                 x.FirstName == _employee.FirstName &&
                 x.LastName == _employee.LastName);
 

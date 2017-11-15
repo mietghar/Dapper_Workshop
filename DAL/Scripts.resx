@@ -217,7 +217,7 @@ DROP PROCEDURE [dbo].[AddressUpdate]
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[AddressUpdate]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[AddressUpdate]
-@AddressId int,
+@Id int,
 @City varchar(100),
 @PostCode varchar(10),
 @Street varchar(100),
@@ -227,7 +227,7 @@ AS
 BEGIN
 	UPDATE Address
 	SET City = @City, PostCode = @PostCode, Street = @Street, HouseNumber = @HouseNumber, LocalNumber = @LocalNumber
-	WHERE AddressId = @AddressId
+	WHERE Id = @Id
 END'
 END
 
@@ -255,7 +255,7 @@ EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[EmployeeInsert]
 @UserId int
 AS
 BEGIN
-IF NOT EXISTS (SELECT EmployeeID FROM Employee WHERE FirstName = @FirstName AND LastName = @LastName)
+IF NOT EXISTS (SELECT Id FROM Employee WHERE FirstName = @FirstName AND LastName = @LastName)
 BEGIN INSERT INTO Employee (UserId, FirstName, LastName, AddressId)
 Values (@UserId, @FirstName, @LastName, @AddressId) END
 END'

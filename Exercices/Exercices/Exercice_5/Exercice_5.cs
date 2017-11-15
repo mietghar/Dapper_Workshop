@@ -18,8 +18,8 @@ namespace Exercices.Exercices.Exercice_5
         {
             using (SqlConnection connection = new SqlConnection(ConnectionStore.ConnectionString))
             {
-                var sql = "SELECT * FROM [Employee] Emp INNER JOIN [User] Usr ON Usr.UserId = Emp.UserId";
-                var test = connection.Query<EmployeeDTO, UserDTO, EmployeeDTO>(sql, (x, y) => { x.UserId = y.UserId; return x; }, splitOn: "UserId").ToList();
+                var sql = "SELECT * FROM [Employee] Emp INNER JOIN [User] Usr ON Usr.Id = Emp.UserId";
+                var test = connection.Query<EmployeeDTO, UserDTO, EmployeeDTO>(sql, (x, y) => { x.UserId = y.Id; return x; }, splitOn: "UserId").ToList();
                 return test;
             }
         }

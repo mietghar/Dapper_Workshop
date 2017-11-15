@@ -40,7 +40,7 @@ namespace ExercicesTests
             var addressListFromTestRepository = _testRepostory.GetAddressByIds(addressIds);
 
             Assert.NotNull(addressList);
-            CollectionAssert.AreEqual(addressList.OrderBy(x => x.AddressId), addressListFromTestRepository.OrderBy(x => x.AddressId), new AddressDTOComparer());
+            CollectionAssert.AreEqual(addressList.OrderBy(x => x.Id), addressListFromTestRepository.OrderBy(x => x.Id), new AddressDTOComparer());
             Assert.AreEqual(addressList.Count, addressListFromTestRepository.Count);
         }
     }

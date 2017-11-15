@@ -22,10 +22,10 @@ namespace DAL.Repository
                     var employee = multipleQueryResult.Read<EmployeeDTO>().FirstOrDefault();
                     var employeeAddress = multipleQueryResult.Read<AddressDTO>().FirstOrDefault();
 
-                    return (employee.AddressId == employeeAddress.AddressId) ? 
+                    return (employee.AddressId == employeeAddress.Id) ? 
                     new
                     {
-                        employee.EmployeeId,
+                        employee.Id,
                         employee.FirstName,
                         employee.LastName,
                         employee.AddressId,
