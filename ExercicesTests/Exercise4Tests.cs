@@ -31,6 +31,16 @@ namespace ExercicesTests
         }
 
         [Test]
+
+        public void run_fourth_exercice_should_be_type_of_address()
+        {
+            Exercice_4 fourthExercise = new Exercice_4();
+            var addressList = fourthExercise.RunExercice();
+
+            Assert.AreEqual(typeof(IEnumerable<AddressDTO>), addressList);
+        }
+
+        [Test]
         public void run_fourth_exercice_should_select_addresses()
         {
             Exercice_4 fourthExercise = new Exercice_4();
